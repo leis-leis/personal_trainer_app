@@ -12,37 +12,34 @@ const logout = () => {
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <router-link class="navbarbrand" to="/">Home</router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item" v-if="userStore.isLoggedIn">
-          <a class="nav-link" href="/userpanel"><Label>TWOJE KONTO</Label></a>
-        </li>
-        <li class="nav-item" v-if="!userStore.isLoggedIn">
-          <a class="nav-link" href="/register">ZAREJESTRUJ SIĘ</a>
-        </li>
-        <li class="nav-item" v-if="!userStore.isLoggedIn">
-          <a class="nav-link" href="/login"><Label>ZALOGUJ SIĘ</Label></a>
-        </li>
-        <li class="nav-item" v-if="userStore.isLoggedIn">
-          <a class="nav-link" @click="logout" href="/login"
-            ><Label>WYLOGUJ</Label></a>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/about">About</router-link>
-        </li>
-      </ul>
-    </div>
+          <v-menu style="float: right;">
+            <template v-slot:activator="{ props }">
+              <v-btn icon="mdi-dots-vertical" v-bind="props"></v-btn>
+            </template>
+
+            <v-list>
+              <v-list-item v-if="!userStore.isLoggedIn">
+                <a class="nav-link" href="/register"><v-list-item-title>Zarejestruj się</v-list-item-title></a>
+              </v-list-item>
+              <v-list-item v-if="!userStore.isLoggedIn">
+                <a class="nav-link" href="/login"><v-list-item-title>Zaloguj się</v-list-item-title></a>
+              </v-list-item>
+              <v-list-item v-if="userStore.isLoggedIn">
+                <a class="nav-link" href="/userpanel"><v-list-item-title>Moje konto</v-list-item-title></a>
+              </v-list-item>
+              
+              <!-- <v-list-item v-if="userStore.user.isAdmin">
+                <a class="nav-link" href="/adminPanel"><v-list-item-title>Panel Administracyjny</v-list-item-title></a>
+              </v-list-item> -->
+              <v-list-item v-if="userStore.isLoggedIn">
+                <a class="nav-link" @click="logout" href="/login"
+                  ><v-list-item-title>Wyloguj się</v-list-item-title></a>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+
+
+
   </nav>
 </template>
 

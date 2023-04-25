@@ -1,6 +1,6 @@
 <script setup>
 import { useUserStore } from "../stores/user";
-import {ref} from "vue";
+import { ref } from "vue";
 const userStore = useUserStore();
 
 const username = ref("");
@@ -29,7 +29,7 @@ const register = () => {
     <div class="row">
       <div class="card mx-auto">
         <div class="card-header text-white bg-primary">
-          <h1>REJESTRACJA</h1>
+          <h1>Zarejestruj się</h1>
         </div>
         <div class="card-body">
           <form @submit.prevent="registerUser">
@@ -39,7 +39,7 @@ const register = () => {
                 id="login"
                 type="text"
                 placeholder="Login"
-                name="Login"
+                name="login"
                 v-model="username"
                 class="form-control"
               />
@@ -50,7 +50,7 @@ const register = () => {
                 type="password"
                 class="form-control"
                 placeholder="Hasło"
-                name="Pass"
+                name="pass"
                 id="password"
                 v-model="password"
               />
@@ -61,7 +61,7 @@ const register = () => {
                 type="password"
                 class="form-control"
                 placeholder="Powtórz hasło"
-                name="PassConfirm"
+                name="passConfirm"
                 id="confirm_password"
                 v-model="confirm_password"
               />
@@ -72,7 +72,7 @@ const register = () => {
                 id="name"
                 type="text"
                 placeholder="Imię"
-                name="Name"
+                name="name"
                 v-model="name"
                 class="form-control"
               />
@@ -83,7 +83,7 @@ const register = () => {
                 id="surname"
                 type="text"
                 placeholder="Nazwisko"
-                name="Surname"
+                name="surname"
                 v-model="surname"
                 class="form-control"
               />
@@ -94,7 +94,7 @@ const register = () => {
                 id="email"
                 type="text"
                 placeholder="Email"
-                name="Email"
+                name="email"
                 v-model="email"
                 class="form-control"
               />
@@ -105,14 +105,14 @@ const register = () => {
                 id="phone"
                 type="text"
                 placeholder="Numer telefonu"
-                name="Phone"
+                name="phone"
                 v-model="mobile"
                 class="form-control"
               />
             </div>
             <br />
             <button class="btn btn-primary" @click="register">
-              ZAREJESTRUJ
+              Zarejestruj
             </button>
             <router-link to="/login" class="card-link tor"
               >Masz już konto?</router-link

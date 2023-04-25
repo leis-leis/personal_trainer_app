@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "./pages/home-page.vue";
-import About from "./pages/About.vue";
 import Register from "./pages/register.vue";
 import Login from "./pages/login.vue";
 import UserPanel from "./pages/userpanel.vue";
@@ -10,10 +9,6 @@ const routes = [
   {
     path: "/",
     component: HomePage,
-  },
-  {
-    path: "/about",
-    component: About,
   },
   {
     path: "/register",

@@ -1,29 +1,26 @@
 <script setup>
-import axios from "axios";
-import { onMounted } from "vue";
+import { useUserStore } from "../stores/user";
 import { ref } from "vue";
 
-const name = ref("");
-const surname = ref("");
-const email = ref("");
-const mobile = ref("");
-const joindate = ref("");
-const lastonline = ref("");
+const userStore = useUserStore();
 
-onMounted(async () => {
-  const res = await axios.get("http://localhost:3000/api/users/userpanel", {
-    headers: {
-      Authorization: localStorage.getItem("token"),
-    },
-  });
-  console.log(res.data.user);
-  name.value = res.data.user.Name;
-  surname.value = res.data.user.Surname;
-  email.value = res.data.user.Email;
-  mobile.value = res.data.user.Phone;
-  joindate.value = res.data.user.JoinDate;
-  lastonline.value = res.data.user.LastOnline;
-});
+const login = ref("")
+const phone = ref("")
+const email = ref("")
+const name = ref("")
+const surname = ref("")
+const joinDate = ref("")
+const lastOnline = ref("")
+
+const u = JSON.parse(userStore.loggedInUser)
+//console.log(u)
+login.value = u.login
+name.value = u.name
+surname.value = u.surname
+phone.value = u.phone
+email.value = u.email
+joinDate.value = u.joinDate.substring(11, 16) + " " + u.joinDate.substring(0,10)
+lastOnline.value = u.lastOnline.substring(11, 16) + " " + u.lastOnline.substring(0,10)
 </script>
 
 <template>
@@ -31,20 +28,21 @@ onMounted(async () => {
     <div class="row">
       <div class="card mx-auto">
         <div class="card-header text-white bg-primary">
-          <h1>TWOJE KONTO</h1>
+          <h1>Moje konto</h1>
         </div>
         <div class="card-body">
           <!-- <img class="card-img-top" src="..." alt="Twój avatar"> -->
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">Login: {{ login }}</li>
             <li class="list-group-item">Imie: {{ name }}</li>
             <li class="list-group-item">Nazwisko: {{ surname }}</li>
             <li class="list-group-item">Email: {{ email }}</li>
-            <li class="list-group-item">Nr telefonu: {{ mobile }}</li>
-            <li class="list-group-item">Data rejestracji: {{ joindate }}</li>
-            <li class="list-group-item">Ostatnio Online: {{ lastonline }}</li>
+            <li class="list-group-item">Nr telefonu: {{ phone }}</li>
+            <li class="list-group-item">Data rejestracji: {{ joinDate }}</li>
+            <li class="list-group-item">Ostatnio Online: {{ lastOnline }}</li>
           </ul>
           <router-link to="/usermodify" class="card-button tor">
-            EDYTUJ
+            Edytuj
           </router-link>
         </div>
       </div>

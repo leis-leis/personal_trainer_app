@@ -1,18 +1,18 @@
 var mongoose = require("mongoose");
 
-var UserSchema = mongoose.Schema({
-  Login: { type: String, required: true, unique: true },
-  Pass: { type: String, required: true },
-  Name: { type: String, required: true },
-  Surname: { type: String, required: true },
-  Email: { type: String, required: true, unique: true },
-  Phone: { type: String, required: false, unique: true },
-  JoinDate: { type: Date, default: Date.now },
-  LastOnline: { type: Date, default: Date.now }, //update przy przejsciu między stronami?
-  Blocked: { type: Boolean, default: false },
-  IsAdmin: { type: Boolean, default: false },
+var userSchema = mongoose.Schema({
+  login: { type: String, required: true, unique: true },
+  pass: { type: String, required: true },
+  name: { type: String, required: true },
+  surname: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  phone: { type: String, required: true, unique: true },
+  joinDate: { type: Date, default: Date.now },
+  lastOnline: { type: Date, default: Date.now }, //update przy przejsciu między stronami?
+  blocked: { type: Boolean, default: false },
+  isAdmin: { type: Boolean, default: false },
 });
 
-var User = mongoose.model("User", UserSchema);
+var User = mongoose.model("User", userSchema);
 
 module.exports = User;

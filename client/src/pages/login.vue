@@ -17,7 +17,7 @@ const login = () => {
     <div class="row">
       <div class="card mx-auto">
         <div class="card-header text-white bg-primary">
-          <h1>LOGOWANIE</h1>
+          <h1>Logowanie</h1>
         </div>
         <div class="card-body">
           <form @submit.prevent="loginUser">
@@ -27,7 +27,7 @@ const login = () => {
                 id="username"
                 type="text"
                 placeholder="Login"
-                name="Login"
+                name="login"
                 v-model="username"
                 class="form-control"
               />
@@ -38,13 +38,13 @@ const login = () => {
                 type="password"
                 class="form-control"
                 placeholder="Hasło"
-                name="Pass"
+                name="pass"
                 id="password"
                 v-model="password"
               />
             </div>
             <br />
-            <button @click="login" type="submit">ZALOGUJ</button>
+            <button @click="login" type="submit">Zaloguj</button>
             <router-link to="/login" class="card-link tor"
               >Zapomniałeś hasła?
             </router-link>
