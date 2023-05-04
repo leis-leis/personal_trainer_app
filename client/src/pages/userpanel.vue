@@ -1,6 +1,7 @@
 <script setup>
 import { useUserStore } from "../stores/user";
 import { ref } from "vue";
+import router from "@/router";
 
 const userStore = useUserStore();
 
@@ -19,8 +20,11 @@ name.value = u.name
 surname.value = u.surname
 phone.value = u.phone
 email.value = u.email
-joinDate.value = u.joinDate.substring(11, 16) + " " + u.joinDate.substring(0,10)
-lastOnline.value = u.lastOnline.substring(11, 16) + " " + u.lastOnline.substring(0,10)
+joinDate.value = u.joinDate.substring(0,10) + " " + u.joinDate.substring(11, 16)
+
+function go(){
+router.push("/usermodify")
+}
 </script>
 
 <template>
@@ -30,21 +34,21 @@ lastOnline.value = u.lastOnline.substring(11, 16) + " " + u.lastOnline.substring
         <div class="card-header text-white bg-primary">
           <h1>Moje konto</h1>
         </div>
-        <div class="card-body">
-          <!-- <img class="card-img-top" src="..." alt="Twój avatar"> -->
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Login: {{ login }}</li>
-            <li class="list-group-item">Imie: {{ name }}</li>
-            <li class="list-group-item">Nazwisko: {{ surname }}</li>
-            <li class="list-group-item">Email: {{ email }}</li>
-            <li class="list-group-item">Nr telefonu: {{ phone }}</li>
-            <li class="list-group-item">Data rejestracji: {{ joinDate }}</li>
-            <li class="list-group-item">Ostatnio Online: {{ lastOnline }}</li>
-          </ul>
-          <router-link to="/usermodify" class="card-button tor">
-            Edytuj
-          </router-link>
-        </div>
+        <v-container >
+          <v-list>
+            <v-list-item rounded="xl" variant="tonal" :title="`Login: ` + login"></v-list-item>
+            <v-list-item  :title="`Imię: ` + name"></v-list-item>
+            <v-list-item rounded="xl" variant="tonal" :title="`Nazwisko: ` + surname"></v-list-item>
+            <v-list-item  :title="`Telefon: ` + phone"></v-list-item>
+            <v-list-item rounded="xl" variant="tonal" :title="`Email: ` + email"></v-list-item>
+            <v-list-item :title="`Data dołączenia: ` + joinDate"></v-list-item>
+          </v-list>
+          <v-container class="text-center">
+            <v-btn @Click="go" variant="tonal">
+              Edytuj
+            </v-btn>
+          </v-container>
+        </v-container>
       </div>
     </div>
   </div>

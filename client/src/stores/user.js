@@ -6,6 +6,7 @@ export const useUserStore = defineStore("user", {
   state: () => ({
     token: localStorage.getItem("token") || "",
     loggedInUser: localStorage.getItem("loggedInUser") || "",
+    user:{},
     status: "",
   }),
   getters: {
@@ -25,12 +26,20 @@ export const useUserStore = defineStore("user", {
       //console.log(res.data.token);
       //console.log(res.data.user)
       this.loggedInUser = res.data.user;
-      console.log(this.loggedInUser)
+      //console.log(this.loggedInUser)
+      if(!res.data.success){
+        return res.data
+      }else{
+        router.push("/")
+      }
+      
     },
+
     logout() {
       this.token = "";
       localStorage.removeItem("token");
     },
+
     async register(login, pass, passConfirm, name, surname, email, phone) {
       const res = await axios.post("http://127.0.0.1:3000/api/users/register", {
         login: login,
@@ -41,7 +50,30 @@ export const useUserStore = defineStore("user", {
         email: email,
         phone: phone,
       });
-      console.log(res.data.msg);
+      if(!res.data.success){
+        return res.data
+      }else{
+        this.login(login, pass)
+        router.push("/")
+      }
     },
+
+    async modify(login, name, surname, phone, email, newPass = "", confirmPass = "", pass){
+      const res = await axios.post("http://127.0.0.1:3000/api/users/modify", {
+        login: login,
+        name: name,
+        surname: surname,
+        phone: phone,
+        email: email,
+        newPass: newPass,
+        confirmPass: confirmPass,
+        pass: pass,
+        user: this.loggedInUser,
+      });
+      return res
+    },
+    test(){
+      return "jakis tekst"
+    }
   },
 });

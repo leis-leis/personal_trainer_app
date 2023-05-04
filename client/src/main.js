@@ -6,6 +6,7 @@ import router from "./router.js";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'

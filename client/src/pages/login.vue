@@ -7,8 +7,17 @@ const userStore = useUserStore();
 const username = ref("");
 const password = ref("");
 
-const login = () => {
-  userStore.login(username.value, password.value);
+const visible = ref("")
+const alert = ref("")
+
+visible.value = false
+
+const login = async () => {
+  const res = await userStore.login(username.value, password.value);
+  if(res.success != true){
+    alert.value = res.msg
+    visible.value = true
+  }
 };
 </script>
 
@@ -19,37 +28,35 @@ const login = () => {
         <div class="card-header text-white bg-primary">
           <h1>Logowanie</h1>
         </div>
-        <div class="card-body">
-          <form @submit.prevent="loginUser">
-            <div class="form-group">
-              <label for="username">Login</label>
-              <input
-                id="username"
-                type="text"
-                placeholder="Login"
-                name="login"
-                v-model="username"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password">Hasło</label>
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Hasło"
-                name="pass"
-                id="password"
-                v-model="password"
-              />
-            </div>
-            <br />
-            <button @click="login" type="submit">Zaloguj</button>
-            <router-link to="/login" class="card-link tor"
+        <v-container>
+            <!-- https://vuetifyjs.com/en/components/alerts/ -->
+            <v-alert 
+            v-model="visible" 
+            :text="alert" 
+            title="Błąd!" 
+            variant="tonal" 
+            type="error"
+            icon="mdi-exclamation"
+            border="top" 
+            closable 
+            close-text="Zamknij ostrzeżenie o błędzie"
+            >
+            </v-alert>
+          </v-container>
+        <v-container>
+            <v-text-field v-model="username" label="Login"></v-text-field>
+          
+            <v-text-field v-model="password" type="password" label="Hasło"></v-text-field>
+        </v-container>
+        <v-container class="text-center">
+            <!-- https://vuetifyjs.com/en/components/buttons/ -->
+            <v-btn @click="login" variant="tonal">
+              Zaloguj
+            </v-btn>
+          </v-container>
+            <!-- <router-link to="/login" class="card-link tor"
               >Zapomniałeś hasła?
-            </router-link>
-          </form>
-        </div>
+            </router-link> -->
       </div>
     </div>
   </div>

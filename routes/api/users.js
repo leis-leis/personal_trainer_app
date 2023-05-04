@@ -9,9 +9,53 @@ const User = require("../../models/User");
 router.post("/register", async (req, res) => {
   let { login, pass, passConfirm, name, surname, email, phone } = req.body;
 
+  if(!login){
+    return res.json({
+      msg: "Nie podano loginu",
+      success: false,
+    });
+  }
+  if(!pass){
+    return res.json({
+      msg: "Nie podano hasła",
+      success: false,
+    });
+  }
+  if(!passConfirm){
+    return res.json({
+      msg: "Nie potwierdzono hasła",
+      success: false,
+    });
+  }
+  if(!name){
+    return res.json({
+      msg: "Nie podano imienia",
+      success: false,
+    });
+  }
+  if(!surname){
+    return res.json({
+      msg: "Nie podano nazwiska",
+      success: false,
+    });
+  }
+  if(!email){
+    return res.json({
+      msg: "Nie podano emaila",
+      success: false,
+    });
+  }
+  if(!phone){
+    return res.json({
+      msg: "Nie podano numeru telefonu",
+      success: false,
+    });
+  }
+
   if (pass !== passConfirm) {
     return res.json({
       msg: "Hasła nie są identyczne.",
+      success: false,
     });
   }
 
@@ -22,6 +66,7 @@ router.post("/register", async (req, res) => {
   if (userByName) {
     return res.json({
       msg: "Użytkownik o podanym loginie już istnieje",
+      success: false,
     });
   }
 
@@ -32,6 +77,7 @@ router.post("/register", async (req, res) => {
   if (userByEmail) {
     return res.json({
       msg: "Użytkownik o podanym Emailu już istnieje",
+      success: false,
     });
   }
 
@@ -42,6 +88,7 @@ router.post("/register", async (req, res) => {
   if (userByPhone) {
     return res.json({
       msg: "Użytkownik o numerze telefonu już istnieje",
+      success: false,
     });
   }
 
@@ -88,6 +135,8 @@ router.post("/login", async (req, res) => {
     surname: found.surname,
     email: found.email,
     phone: found.phone,
+    joinDate: found.joinDate,
+    lastOnline: found.lastOnline
   };
 
   const token = await jwt.sign(payload, key, {
@@ -102,6 +151,61 @@ router.post("/login", async (req, res) => {
   });
 });
 
+router.post(
+  "/modify",
+  async (req, res) => {
+    var hash = null
+    const u = JSON.parse(req.body.user)
+    const found = await User.findOne({ _id: u._id });
 
+    //tu cos nie tak
+    const isMatch = await bcrypt.compare(req.body.pass, found.pass);
+    if (!isMatch) {
+      return res.json({
+        msg: "Nieprawidłowe hasło.",
+        success: false,
+      });
+    }
+    console.log('przeszlo')
+
+    const checkForLogin = await User.findOne({login: req.body.login})
+    if(checkForLogin != found){
+      return res.json({
+        msg: "Podany login jest już zajęty",
+        success: false,
+      })
+    }
+  
+    if(req.body.newPass != "" && req.body.confirmPass != ""){
+      if(req.body.newPass == req.body.confirmPass){
+        hash = await bcrypt.hash(pass, 10)
+      }else{
+        return res.json({
+          msg: "Nowe hasła nie są identyczne.",
+          success: false,
+        })
+      }
+    }
+    var update = {
+      login: req.body.login,
+      name: req.body.name,
+      surname: req.body.surname,
+      phone: req.body.phone,
+      email: req.body.email,
+    }
+
+    if(hash != null){
+      update.pass = hash
+    }
+
+    console.log(update)
+  
+    res.json({
+      success: true,
+      user: found,
+      msg: "Jesteś teraz zalogowany/a",
+    });
+  }
+)
 
 module.exports = router; 

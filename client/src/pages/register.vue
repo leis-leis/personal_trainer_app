@@ -7,20 +7,30 @@ const username = ref("");
 const name = ref("");
 const surname = ref("");
 const email = ref("");
-const mobile = ref("");
-const password = ref("");
-const confirm_password = ref("");
+const phone = ref("");
+const pass = ref("");
+const passConfirm = ref("");
 
-const register = () => {
-  userStore.register(
+const visible = ref("")
+const alert = ref("")
+
+visible.value = false
+
+const register = async () => {
+  var res = await userStore.register(
     username.value,
-    password.value,
-    confirm_password.value,
+    pass.value,
+    passConfirm.value,
     name.value,
     surname.value,
     email.value,
-    mobile.value
+    phone.value
   );
+
+  if(res.success != true){
+    alert.value = res.msg
+    visible.value = true
+  }
 };
 </script>
 
@@ -31,94 +41,45 @@ const register = () => {
         <div class="card-header text-white bg-primary">
           <h1>Zarejestruj się</h1>
         </div>
-        <div class="card-body">
-          <form @submit.prevent="registerUser">
-            <div class="form-group">
-              <label for="login">Login</label>
-              <input
-                id="login"
-                type="text"
-                placeholder="Login"
-                name="login"
-                v-model="username"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password">Hasło</label>
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Hasło"
-                name="pass"
-                id="password"
-                v-model="password"
-              />
-            </div>
-            <div class="form-group">
-              <label for="confirm_password">Powtórz hasło</label>
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Powtórz hasło"
-                name="passConfirm"
-                id="confirm_password"
-                v-model="confirm_password"
-              />
-            </div>
-            <div class="form-group">
-              <label for="name">Imię</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Imię"
-                name="name"
-                v-model="name"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="surname">Nazwisko</label>
-              <input
-                id="surname"
-                type="text"
-                placeholder="Nazwisko"
-                name="surname"
-                v-model="surname"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                type="text"
-                placeholder="Email"
-                name="email"
-                v-model="email"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="phone">Numer telefonu</label>
-              <input
-                id="phone"
-                type="text"
-                placeholder="Numer telefonu"
-                name="phone"
-                v-model="mobile"
-                class="form-control"
-              />
-            </div>
-            <br />
-            <button class="btn btn-primary" @click="register">
+          <v-container>
+            <!-- https://vuetifyjs.com/en/components/alerts/ -->
+            <v-alert 
+            v-model="visible" 
+            :text="alert" 
+            title="Błąd!" 
+            variant="tonal" 
+            type="error"
+            icon="mdi-exclamation"
+            border="top" 
+            closable 
+            close-text="Zamknij ostrzeżenie o błędzie"
+            >
+            </v-alert>
+          </v-container>
+          <v-container>
+            <v-text-field v-model="username" label="Login"></v-text-field>
+          
+            <v-text-field v-model="pass" type="password" label="Hasło"></v-text-field>
+          
+            <v-text-field v-model="passConfirm" type="password" label="Powtórz hasło"></v-text-field>
+          
+            <v-text-field v-model="name" label="Imię"></v-text-field>
+
+            <v-text-field v-model="surname" label="Nazwisko"></v-text-field>
+
+            <v-text-field v-model="email" label="Email"></v-text-field>
+
+            <v-text-field v-model="phone" label="Telefon"></v-text-field>
+          </v-container>
+          <v-container class="text-center">
+            <!-- https://vuetifyjs.com/en/components/buttons/ -->
+            <v-btn @click="register" variant="tonal">
               Zarejestruj
-            </button>
+            </v-btn>
+          </v-container>
             <router-link to="/login" class="card-link tor"
               >Masz już konto?</router-link
             >
-          </form>
-        </div>
       </div>
     </div>
   </div>
