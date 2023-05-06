@@ -1,6 +1,8 @@
 <script setup>
+import router from "@/router";
 import { useUserStore } from "../stores/user";
 import { ref } from "vue";
+import { onMounted } from "vue";
 
 const userStore = useUserStore();
 
@@ -15,22 +17,38 @@ const pass = ref("")
 
 const alert = ref("")
 const visible = ref("")
+const type = ref("")
+const title = ref("")
 
 visible.value = false
 
-const u = JSON.parse(userStore.loggedInUser)
-//console.log(u)
-login.value = u.login
-name.value = u.name
-surname.value = u.surname
-phone.value = u.phone
-email.value = u.email
+onMounted(async () => {
+  console.log(userStore.loggedInUser)
+  if(userStore.loggedInUser){
+    const u = JSON.parse(userStore.loggedInUser)
+    //console.log(u)
+    login.value = u.login
+    name.value = u.name
+    surname.value = u.surname
+    phone.value = u.phone
+    email.value = u.email
+  }
+});
 
 
-function onPost(){
-  alert.value = userStore.test()
-  visible.value = true
-  var res = userStore.modify(login, name, surname, phone, email, newPass, confirmPass, pass)
+async function onPost(){
+  const res = await userStore.modify(login.value, name.value, surname.value, phone.value, email.value, newPass.value, confirmPass.value, pass.value)
+  if(!res?.success){
+    alert.value = res?.msg
+    visible.value = true
+    type.value = "error"
+    title.value = "Błąd!"
+  }else{
+    alert.value = res?.msg
+    visible.value = true
+    type.value = "success"
+    title.value = "Sukces!"
+  }
 }
 </script>
 
@@ -47,9 +65,9 @@ function onPost(){
             <v-alert 
             v-model="visible" 
             :text="alert" 
-            title="Błąd!" 
+            :title="title" 
             variant="tonal" 
-            type="error"
+            :type="type"
             icon="mdi-exclamation"
             border="top" 
             closable 

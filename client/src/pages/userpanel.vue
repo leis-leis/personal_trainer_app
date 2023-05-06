@@ -11,7 +11,6 @@ const email = ref("")
 const name = ref("")
 const surname = ref("")
 const joinDate = ref("")
-const lastOnline = ref("")
 
 const u = JSON.parse(userStore.loggedInUser)
 //console.log(u)

@@ -23,21 +23,15 @@ export const useUserStore = defineStore("user", {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("loggedInUser", JSON.stringify(res.data.user));
       this.token = res.data.token;
-      //console.log(res.data.token);
-      //console.log(res.data.user)
       this.loggedInUser = res.data.user;
-      //console.log(this.loggedInUser)
-      if(!res.data.success){
-        return res.data
-      }else{
-        router.push("/")
-      }
-      
+      //window.location.reload()
+      return res.data
     },
 
     logout() {
       this.token = "";
       localStorage.removeItem("token");
+      localStorage.removeItem("loggedInUser")
     },
 
     async register(login, pass, passConfirm, name, surname, email, phone) {
@@ -54,7 +48,6 @@ export const useUserStore = defineStore("user", {
         return res.data
       }else{
         this.login(login, pass)
-        router.push("/")
       }
     },
 
@@ -70,10 +63,16 @@ export const useUserStore = defineStore("user", {
         pass: pass,
         user: this.loggedInUser,
       });
-      return res
+      if(!res.data.success){
+        return res.data
+      }else{
+        let l = res?.data?.login
+        let p = res?.data?.password
+
+        await this.logout()
+        await this.login(l, p)
+        return res.data
+      }
     },
-    test(){
-      return "jakis tekst"
-    }
   },
 });

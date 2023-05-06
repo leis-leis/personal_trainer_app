@@ -30,6 +30,8 @@ const register = async () => {
   if(res.success != true){
     alert.value = res.msg
     visible.value = true
+  }else{
+    router.push("/")
   }
 };
 </script>

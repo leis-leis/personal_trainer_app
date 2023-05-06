@@ -11,6 +11,7 @@ var userSchema = mongoose.Schema({
   lastOnline: { type: Date, default: Date.now }, //update przy przejsciu między stronami?
   blocked: { type: Boolean, default: false },
   isAdmin: { type: Boolean, default: false },
+  workouts: [{ type: mongoose.Types.ObjectId, ref: "Workout" }],
 });
 
 var User = mongoose.model("User", userSchema);

@@ -8,7 +8,7 @@ const User = require("../../models/User");
 
 router.post("/register", async (req, res) => {
   let { login, pass, passConfirm, name, surname, email, phone } = req.body;
-
+  
   if(!login){
     return res.json({
       msg: "Nie podano loginu",
@@ -112,6 +112,18 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  if(req.body.login == ""){
+    return res.json({
+      msg: "Nie podano loginu",
+      success: false,
+    });
+  }
+  if(req.body.pass == ""){
+    return res.json({
+      msg: "Nie podano hasła",
+      success: false,
+    });
+  }
   const found = await User.findOne({ login: req.body.login });
   if (!found) {
     return res.json({
@@ -151,34 +163,43 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.post(
-  "/modify",
-  async (req, res) => {
+router.post("/modify", async (req, res) => {
     var hash = null
     const u = JSON.parse(req.body.user)
     const found = await User.findOne({ _id: u._id });
 
-    //tu cos nie tak
     const isMatch = await bcrypt.compare(req.body.pass, found.pass);
     if (!isMatch) {
       return res.json({
-        msg: "Nieprawidłowe hasło.",
+        msg: "Podano nieprawidłowe hasło.",
         success: false,
       });
     }
-    console.log('przeszlo')
 
     const checkForLogin = await User.findOne({login: req.body.login})
-    if(checkForLogin != found){
+    if(checkForLogin.login != found.login){
       return res.json({
         msg: "Podany login jest już zajęty",
         success: false,
       })
     }
-  
+    
+    if(req.body.newPass == "" && req.body.confirmPass != ""){
+      return res.json({
+        msg: "Nie podano nowego hasła",
+        success: false,
+      })
+    }
+    if(req.body.newPass != "" && req.body.confirmPass == ""){
+      return res.json({
+        msg: "Nie potwierdzono nowego hasła",
+        success: false,
+      })
+    }
+
     if(req.body.newPass != "" && req.body.confirmPass != ""){
       if(req.body.newPass == req.body.confirmPass){
-        hash = await bcrypt.hash(pass, 10)
+        hash = await bcrypt.hash(req.body.newPass, 10)
       }else{
         return res.json({
           msg: "Nowe hasła nie są identyczne.",
@@ -186,7 +207,8 @@ router.post(
         })
       }
     }
-    var update = {
+    var update
+    update = {
       login: req.body.login,
       name: req.body.name,
       surname: req.body.surname,
@@ -197,14 +219,27 @@ router.post(
     if(hash != null){
       update.pass = hash
     }
-
-    console.log(update)
+    let updateFound = await User.findOneAndUpdate({_id: u._id}, update, {new: true})
   
-    res.json({
-      success: true,
-      user: found,
-      msg: "Jesteś teraz zalogowany/a",
-    });
+    //console.log(updateFound)
+
+    if(hash == null){
+      return res.json({
+        success: true,
+        user: updateFound,
+        password: req.body.pass,
+        login: updateFound.login,
+        msg: "Zaktualizowano informacje",
+      });
+    }else{
+      return res.json({
+        success: true,
+        user: updateFound,
+        password: req.body.newPass,
+        login: updateFound.login,
+        msg: "Zaktualizowano informacje",
+      });
+    }
   }
 )
 
