@@ -23,10 +23,8 @@ const title = ref("")
 visible.value = false
 
 onMounted(async () => {
-  console.log(userStore.loggedInUser)
   if(userStore.loggedInUser){
     const u = JSON.parse(userStore.loggedInUser)
-    //console.log(u)
     login.value = u.login
     name.value = u.name
     surname.value = u.surname

@@ -140,6 +140,14 @@ router.post("/login", async (req, res) => {
     });
   }
 
+  console.log(found.blocked)
+  if(found.blocked){
+    return res.json({
+      msg: "Twoje konto zostało zablokowane. Skontaktuj się z właścicielem serwisu.",
+      success: false,
+    });
+  }
+
   const payload = {
     _id: found._id,
     login: found.login,
@@ -243,4 +251,12 @@ router.post("/modify", async (req, res) => {
   }
 )
 
+router.get("/users", async (req, res) => {
+  const users = await User.find({});
+
+  return res.json({
+    success: true,
+    users: users,
+  })
+})
 module.exports = router; 

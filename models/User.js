@@ -12,6 +12,7 @@ var userSchema = mongoose.Schema({
   blocked: { type: Boolean, default: false },
   isAdmin: { type: Boolean, default: false },
   workouts: [{ type: mongoose.Types.ObjectId, ref: "Workout" }],
+  diets: [{ type: mongoose.Types.ObjectId, ref: "Diet" }],
 });
 
 var User = mongoose.model("User", userSchema);

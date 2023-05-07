@@ -6,13 +6,13 @@ export const useUserStore = defineStore("user", {
   state: () => ({
     token: localStorage.getItem("token") || "",
     loggedInUser: localStorage.getItem("loggedInUser") || "",
-    user:{},
     status: "",
+    admin: "",
   }),
   getters: {
     isLoggedIn: (state) => !!state.token,
     authState: (state) => state.status,
-    user: (state) => state.user,
+    isAdmin: (state) => state.admin
   },
   actions: {
     async login(login, pass) {
@@ -20,17 +20,22 @@ export const useUserStore = defineStore("user", {
         login: login,
         pass: pass,
       });
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("loggedInUser", JSON.stringify(res.data.user));
-      this.token = res.data.token;
-      this.loggedInUser = res.data.user;
-      //window.location.reload()
+      if(res.data.token && res.data.user){
+      localStorage.setItem("token", res.data.token)
+      localStorage.setItem("loggedInUser", JSON.stringify(res.data.user))
+      this.token = res.data.token
+      this.loggedInUser = res.data.user
+      this.admin = res.data.user.isAdmin
+      }
       return res.data
     },
 
     logout() {
-      this.token = "";
-      localStorage.removeItem("token");
+      this.token = ""
+      this.loggedInUser = ""
+      this.status = ""
+      this.admin = ""
+      localStorage.removeItem("token")
       localStorage.removeItem("loggedInUser")
     },
 

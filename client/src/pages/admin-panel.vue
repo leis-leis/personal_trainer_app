@@ -8,7 +8,7 @@ import { onMounted } from "vue";
 </script>
 
 <template>
-  <h1></h1>
+  <h1>admin panel</h1>
 </template>
 
 <style scoped></style>
