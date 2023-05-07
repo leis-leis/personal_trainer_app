@@ -7,12 +7,12 @@ export const useUserStore = defineStore("user", {
     token: localStorage.getItem("token") || "",
     loggedInUser: localStorage.getItem("loggedInUser") || "",
     status: "",
-    admin: "",
+    admin: JSON.parse(localStorage.getItem("loggedInUser"))?.isAdmin || false,
   }),
   getters: {
     isLoggedIn: (state) => !!state.token,
     authState: (state) => state.status,
-    isAdmin: (state) => state.admin
+    isAdmin: (state) => state.admin,
   },
   actions: {
     async login(login, pass) {
@@ -79,5 +79,9 @@ export const useUserStore = defineStore("user", {
         return res.data
       }
     },
+
+    show(){
+      console.log(this.admin)
+    }
   },
 });

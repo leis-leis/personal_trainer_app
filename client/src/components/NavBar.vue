@@ -21,6 +21,8 @@ const logout = () => {
   userStore.logout();
   router.push("/")
 };
+
+userStore.show()
 </script>
 
 <template>
