@@ -8,9 +8,8 @@ import axios from "axios";
 const users = ref("")
 
 onMounted(async () => {
-  const res = await axios.get("http://127.0.0.1:3000/api/users/users", {})
+  const res = await axios.get("http://127.0.0.1:4000/api/users/users", {})
   users.value = res.data.users
-    console.log(users.value[0].name)
 })
 </script>
 

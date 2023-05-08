@@ -16,7 +16,7 @@ export const useUserStore = defineStore("user", {
   },
   actions: {
     async login(login, pass) {
-      const res = await axios.post("http://127.0.0.1:3000/api/users/login", {
+      const res = await axios.post("http://127.0.0.1:4000/api/users/login", {
         login: login,
         pass: pass,
       });
@@ -40,7 +40,7 @@ export const useUserStore = defineStore("user", {
     },
 
     async register(login, pass, passConfirm, name, surname, email, phone) {
-      const res = await axios.post("http://127.0.0.1:3000/api/users/register", {
+      const res = await axios.post("http://127.0.0.1:4000/api/users/register", {
         login: login,
         pass: pass,
         passConfirm: passConfirm,
@@ -57,7 +57,7 @@ export const useUserStore = defineStore("user", {
     },
 
     async modify(login, name, surname, phone, email, newPass = "", confirmPass = "", pass){
-      const res = await axios.post("http://127.0.0.1:3000/api/users/modify", {
+      const res = await axios.post("http://127.0.0.1:4000/api/users/modify", {
         login: login,
         name: name,
         surname: surname,

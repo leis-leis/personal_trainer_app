@@ -22,7 +22,7 @@ const logout = () => {
   router.push("/")
 };
 
-userStore.show()
+//userStore.show()
 </script>
 
 <template>

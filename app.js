@@ -7,7 +7,7 @@ const passport = require("passport");
 
 const app = express();
 
-const port = 3000;
+const port = 4000;
 
 //middleware
 //dane z formularzy
@@ -42,6 +42,12 @@ mongoose
 
 const users = require("./routes/api/users");
 app.use("/api/users", users);
+
+const exercises = require("./routes/api/exercises");
+app.use("/api/exercises", exercises);
+
+const workouts = require("./routes/api/workouts");
+app.use("/api/workouts", workouts);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

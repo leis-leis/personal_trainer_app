@@ -5,7 +5,11 @@ import Login from "./pages/login.vue";
 import UserPanel from "./pages/user-panel.vue";
 import UserModify from "./pages/user-modify.vue";
 import AdminPanel from "./pages/admin-panel.vue";
-import Users from "./pages/users.vue";
+import AdminUserList from "./pages/admin-user-list.vue";
+import AdminExerciseList from "./pages/admin-exercise-list.vue";
+import AdminExerciseAdd from "./pages/admin-exercise-add.vue";
+import AdminWorkoutAdd from "./pages/admin-workout-add.vue";
+import AdminWorkoutList from "./pages/admin-workout-list.vue";
 
 const routes = [
   {
@@ -33,9 +37,26 @@ const routes = [
     component: AdminPanel,
   },
   {
-    path: "/users",
-    component: Users,
+    path: "/adminuserlist",
+    component: AdminUserList,
+  },
+  {
+    path: "/adminexerciselist",
+    component: AdminExerciseList,
+  },
+  {
+    path: "/adminexerciseadd",
+    component: AdminExerciseAdd,
+  },
+  {
+    path: "/adminworkoutadd",
+    component: AdminWorkoutAdd,
+  },
+  {
+    path: "/adminworkoutlist",
+    component: AdminWorkoutList,
   }
+  
 ];
 
 const router = createRouter({
