@@ -1,6 +1,7 @@
 <script setup>
 import { useUserStore } from "../stores/user";
 import { ref } from "vue";
+import router from "@/router";
 const userStore = useUserStore();
 
 const username = ref("");
@@ -27,8 +28,8 @@ const register = async () => {
     phone.value
   );
 
-  if(res.success != true){
-    alert.value = res.msg
+  if(!res?.success){
+    alert.value = res?.msg
     visible.value = true
   }else{
     router.push("/")

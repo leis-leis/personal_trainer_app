@@ -27,6 +27,7 @@ export const useUserStore = defineStore("user", {
       this.loggedInUser = res.data.user
       this.admin = res.data.user.isAdmin
       }
+      console.log(res.data)
       return res.data
     },
 
@@ -52,7 +53,8 @@ export const useUserStore = defineStore("user", {
       if(!res.data.success){
         return res.data
       }else{
-        this.login(login, pass)
+        //console.log(res.data)
+        return this.login(login, pass)
       }
     },
 

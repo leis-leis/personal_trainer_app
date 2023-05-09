@@ -140,7 +140,7 @@ router.post("/login", async (req, res) => {
     });
   }
 
-  console.log(found.blocked)
+  //console.log(found.blocked)
   if(found.blocked){
     return res.json({
       msg: "Twoje konto zostało zablokowane. Skontaktuj się z właścicielem serwisu.",
