@@ -49,6 +49,9 @@ app.use("/api/exercises", exercises);
 const workouts = require("./routes/api/workouts");
 app.use("/api/workouts", workouts);
 
+const posts = require("./routes/api/posts");
+app.use("/api/posts", posts);
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

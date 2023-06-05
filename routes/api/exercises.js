@@ -42,16 +42,21 @@ router.post("/exerciseadd", uploads.any("photos"), async (req, res) => {
             newExercise.title = req.body.title
         }  
     }
+    if(!req.body.desc){
+        return res.json({
+            success: false,
+            msg: "Podaj opis ćwiczenia",
+        });
+    }
+    else{
+        newExercise.desc = req.body.desc
+    }
 
     if(req.body.videoLink != undefined && req.files.length == 0){
         return res.json({
             success: false,
             msg: "Dodaj link do filmu, lub zdjęcie/cia",
         });
-    }
-
-    if(req.body.desc){
-        newExercise.desc = req.body.desc
     }
 
     if(req.body.videoLink){
@@ -72,8 +77,10 @@ router.post("/exerciseadd", uploads.any("photos"), async (req, res) => {
     }
 
     if(req.body.descs){
-        let photoDescs = req.body.descs
-        console.log(req.body.descs)
+        let photoDescs = []
+        photoDescs.push(req.body.descs)
+
+        //console.log(req.body.descs)
         photoDescs.forEach(function(element, i){
             photos[i].desc = element
         })
@@ -105,6 +112,61 @@ router.get("/exerciselist", async (req, res) => {
         success: true,
         exercises: exercises,
     })
+})
+
+router.get("/exercises/:search?", async (req, res) => {
+      let regex
+  
+      if(req.params.search){
+        let s = req.params.search
+        regex = new RegExp(s, 'i') // "i" opcja na case insensitive
+      }
+      var exercise
+      if(regex){
+        exercise = await Exercise.find({
+        "title" : { "$regex": regex }
+      }) 
+      }else{
+        exercise = await Exercise.find({
+      })
+      }
+  
+      return res.json({
+        success: true,
+        exercises: exercise
+      });
+      
+    }
+  )
+
+router.get("/exercisecheck/:title", async (req, res) => {
+    const exercise = await Exercise.findOne({title: req.params.title})
+    if(exercise){
+        return res.json({
+            success: true,
+            id: exercise._id
+        })
+    }else{
+        return res.json({
+            success: false,
+            msg: "Błąd przy wyszukiwaniu ćwiczenia",
+        })
+    }
+})
+
+router.get("/exercise/:id", async (req, res) => {
+    const exercise = await Exercise.findOne({_id: req.params.id})
+    if(exercise){
+        return res.json({
+            success: true,
+            exercise: exercise,
+        })
+    }else{
+        return res.json({
+            success: false,
+            msg: "Błąd przy wyszukiwaniu ćwiczenia",
+        })
+    }
 })
 
 

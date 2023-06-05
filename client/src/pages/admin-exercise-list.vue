@@ -35,6 +35,7 @@ function exercisesadd(){
 
   <v-list>
     <v-list-item v-for="exercise in exercises">
+      <router-link :to="{name: 'exercise', params: {id: exercise._id}}">
         <v-container style="display: flex; flex-direction: row;">
             <v-img width="100" :src="'/src/assets/uploads/exercises/' + exercise.photos[0]?.photo"></v-img>
             <v-container style="display: flex; flex-direction: column;">
@@ -42,6 +43,7 @@ function exercisesadd(){
                 <v-list-item-subtitle>{{ exercise.desc }}</v-list-item-subtitle>
             </v-container>
         </v-container>
+      </router-link>
     </v-list-item>
   </v-list>
 </template>

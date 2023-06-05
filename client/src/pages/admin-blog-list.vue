@@ -5,19 +5,19 @@ import { ref } from "vue";
 import { onMounted } from "vue";
 import axios from "axios";
 
-const workouts = ref("")
+const blogPosts = ref("")
 
 onMounted(async () => {
-  const res = await axios.get("http://127.0.0.1:4000/api/workouts/workoutlist")
-  workouts.value = res.data.workouts
+  const res = await axios.get("http://127.0.0.1:4000/api/posts/postlist")
+  blogPosts.value = res.data.posts
 })
 
 function adminpanel(){
     router.push("/adminpanel")
 }
 
-function workoutsadd(){
-    router.push("/adminworkoutadd")
+function postadd(){
+    router.push("/adminpostadd")
 }
 </script>
 
@@ -26,22 +26,21 @@ function workoutsadd(){
     <v-btn @click="adminpanel" variant="tonal">
       Panel administracyjny
     </v-btn>
-    <h1>Lista planów treningowych</h1>
-    <v-btn @click="workoutsadd" variant="tonal">
-      Dodaj plan treningowy
+    <h1>Lista postów na blogu</h1>
+    <v-btn @click="postadd" variant="tonal">
+      Dodaj post na bloga
     </v-btn>
   </v-container>
 
   <v-list>
-    <v-list-item v-for="workout in workouts">
-      <router-link :to="{name: 'workout', params: {id: workout._id}}">
+    <v-list-item v-for="post in blogPosts">
         <v-container style="display: flex; flex-direction: row;">
+            <v-img width="100" :src="'/src/assets/uploads/posts/' + post.photos[0]?.photo"></v-img>
             <v-container style="display: flex; flex-direction: column;">
-                <v-list-item-title>{{ workout.title }}</v-list-item-title>
-                <v-list-item-subtitle>{{ workout.desc }}</v-list-item-subtitle>
+                <v-list-item-title>{{ post.title }}</v-list-item-title>
+                <v-list-item-subtitle>{{ post.desc }}</v-list-item-subtitle>
             </v-container>
         </v-container>
-      </router-link>
     </v-list-item>
   </v-list>
 </template>

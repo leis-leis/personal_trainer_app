@@ -10,6 +10,15 @@ function exercises(){
 function workouts(){
   router.push("/adminworkoutlist")
 }
+function diets(){
+  router.push("/adminworkoutlist")
+}
+function calendar(){
+  router.push("/adminworkoutlist")
+}
+function blog(){
+  router.push("/adminpostlist")
+}
 </script>
 
 <template>
@@ -26,6 +35,9 @@ function workouts(){
     </v-btn>
     <v-btn @click="calendar" variant="tonal">
       Harmonogram
+    </v-btn>
+    <v-btn @click="blog" variant="tonal">
+      Blog
     </v-btn>
   </v-container>
 </template>

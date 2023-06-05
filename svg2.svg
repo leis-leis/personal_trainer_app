@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="-399.219 514.72 886.348 515.755" width="886.348" height="515.755">
+  <g id="graph0" class="graph" transform="matrix(1, 0, 0, 1, 144, 1402)">
+    <title>%0</title>
+    <polygon fill="#ffffff" stroke="transparent" points="-543.219 -371.525 -543.219 -887.28 343.129 -887.28 343.129 -371.525 -543.219 -371.525" style=""></polygon>
+    <g id="node1" class="node" transform="matrix(1, 0, 0, 1, -21.695503, 400.027771)">
+      <title>calendars</title>
+      <polygon fill="#4477c9" stroke="transparent" points="233.2792,-980 233.2792,-1258 330.2792,-1258 330.2792,-980 233.2792,-980"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="233.7792,-1240 233.7792,-1258 330.7792,-1258 330.7792,-1240 233.7792,-1240"></polygon>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1240 233.7792,-1258 330.7792,-1258 330.7792,-1240 233.7792,-1240"></polygon>
+      <text text-anchor="start" x="263.0403" y="-1246.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> calendars </text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1220 233.7792,-1240 330.7792,-1240 330.7792,-1220 233.7792,-1220"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1226.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desiredDate: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1200 233.7792,-1220 330.7792,-1220 330.7792,-1200 233.7792,-1200"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1206.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">title: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1180 233.7792,-1200 330.7792,-1200 330.7792,-1180 233.7792,-1180"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1186.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desc: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1160 233.7792,-1180 330.7792,-1180 330.7792,-1160 233.7792,-1160"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1166.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">type: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1140 233.7792,-1160 330.7792,-1160 330.7792,-1140 233.7792,-1140"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1146.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">address.city: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1120 233.7792,-1140 330.7792,-1140 330.7792,-1120 233.7792,-1120"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1126.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">address.street: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1100 233.7792,-1120 330.7792,-1120 330.7792,-1100 233.7792,-1100"></polygon>
+      <text text-anchor="start" x="238.2885" y="-1106.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">address.houseNo: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1080 233.7792,-1100 330.7792,-1100 330.7792,-1080 233.7792,-1080"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1086.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">isOpen: Boolean</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1060 233.7792,-1080 330.7792,-1080 330.7792,-1060 233.7792,-1060"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1066.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">confimed: Boolean</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1040 233.7792,-1060 330.7792,-1060 330.7792,-1040 233.7792,-1040"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1046.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">date: String</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1020 233.7792,-1040 330.7792,-1040 330.7792,-1020 233.7792,-1020"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1026.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">user: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-1000 233.7792,-1020 330.7792,-1020 330.7792,-1000 233.7792,-1000"></polygon>
+      <text text-anchor="start" x="238.7792" y="-1006.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="233.7792,-980 233.7792,-1000 330.7792,-1000 330.7792,-980 233.7792,-980"></polygon>
+      <text text-anchor="start" x="238.7792" y="-986.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="node2" class="node" transform="matrix(1, 0, 0, 1, -227.06279, 51.000828)">
+      <title>diets</title>
+      <polygon fill="#4477c9" stroke="transparent" points="245.2792,-730 245.2792,-908 318.2792,-908 318.2792,-730 245.2792,-730"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="245.7792,-890 245.7792,-908 318.7792,-908 318.7792,-890 245.7792,-890"></polygon>
+      <polygon fill="none" stroke="#000000" points="245.7792,-890 245.7792,-908 318.7792,-908 318.7792,-890 245.7792,-890"></polygon>
+      <text text-anchor="start" x="271.5305" y="-896.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> diets </text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-870 245.7792,-890 318.7792,-890 318.7792,-870 245.7792,-870"></polygon>
+      <text text-anchor="start" x="250.7792" y="-876.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">title: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-850 245.7792,-870 318.7792,-870 318.7792,-850 245.7792,-850"></polygon>
+      <text text-anchor="start" x="250.7792" y="-856.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desc: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-830 245.7792,-850 318.7792,-850 318.7792,-830 245.7792,-830"></polygon>
+      <text text-anchor="start" x="250.7792" y="-836.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">plan: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-810 245.7792,-830 318.7792,-830 318.7792,-810 245.7792,-810"></polygon>
+      <text text-anchor="start" x="250.4061" y="-816.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">isPublic: Boolean</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-790 245.7792,-810 318.7792,-810 318.7792,-790 245.7792,-790"></polygon>
+      <text text-anchor="start" x="250.7792" y="-796.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">users: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-770 245.7792,-790 318.7792,-790 318.7792,-770 245.7792,-770"></polygon>
+      <text text-anchor="start" x="250.7792" y="-776.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">creator: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-750 245.7792,-770 318.7792,-770 318.7792,-750 245.7792,-750"></polygon>
+      <text text-anchor="start" x="250.7792" y="-756.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-730 245.7792,-750 318.7792,-750 318.7792,-730 245.7792,-730"></polygon>
+      <text text-anchor="start" x="250.7792" y="-736.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="node3" class="node" transform="matrix(1, 0, 0, 1, -398.284973, -198.311646)">
+      <title>exercises</title>
+      <polygon fill="#4477c9" stroke="transparent" points="245.2792,-500 245.2792,-658 318.2792,-658 318.2792,-500 245.2792,-500"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="245.7792,-640 245.7792,-658 318.7792,-658 318.7792,-640 245.7792,-640"></polygon>
+      <polygon fill="none" stroke="#000000" points="245.7792,-640 245.7792,-658 318.7792,-658 318.7792,-640 245.7792,-640"></polygon>
+      <text text-anchor="start" x="263.5403" y="-646.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> exercises </text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-620 245.7792,-640 318.7792,-640 318.7792,-620 245.7792,-620"></polygon>
+      <text text-anchor="start" x="250.7792" y="-626.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">title: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-600 245.7792,-620 318.7792,-620 318.7792,-600 245.7792,-600"></polygon>
+      <text text-anchor="start" x="250.7792" y="-606.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desc: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-580 245.7792,-600 318.7792,-600 318.7792,-580 245.7792,-580"></polygon>
+      <text text-anchor="start" x="250.4052" y="-586.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">videoLink: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-560 245.7792,-580 318.7792,-580 318.7792,-560 245.7792,-560"></polygon>
+      <text text-anchor="start" x="250.7792" y="-566.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">photos: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-540 245.7792,-560 318.7792,-560 318.7792,-540 245.7792,-540"></polygon>
+      <text text-anchor="start" x="250.7792" y="-546.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">creator: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-520 245.7792,-540 318.7792,-540 318.7792,-520 245.7792,-520"></polygon>
+      <text text-anchor="start" x="250.7792" y="-526.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-500 245.7792,-520 318.7792,-520 318.7792,-500 245.7792,-500"></polygon>
+      <text text-anchor="start" x="250.7792" y="-506.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="node4" class="node" transform="matrix(1, 0, 0, 1, -513.984131, 354.733459)">
+      <title>infos</title>
+      <polygon fill="#4477c9" stroke="transparent" points="2.5,-890 2.5,-1128 72.5,-1128 72.5,-890 2.5,-890"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="2.5,-1110 2.5,-1128 72.5,-1128 72.5,-1110 2.5,-1110"></polygon>
+      <polygon fill="none" stroke="#000000" points="2.5,-1110 2.5,-1128 72.5,-1128 72.5,-1110 2.5,-1110"></polygon>
+      <text text-anchor="start" x="26.2514" y="-1116.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> infos </text>
+      <polygon fill="none" stroke="#000000" points="2.5,-1090 2.5,-1110 72.5,-1110 72.5,-1090 2.5,-1090"></polygon>
+      <text text-anchor="start" x="7.5" y="-1096.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">company: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-1070 2.5,-1090 72.5,-1090 72.5,-1070 2.5,-1070"></polygon>
+      <text text-anchor="start" x="7.5" y="-1076.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">name: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-1050 2.5,-1070 72.5,-1070 72.5,-1050 2.5,-1050"></polygon>
+      <text text-anchor="start" x="7.5" y="-1056.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">surname: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-1030 2.5,-1050 72.5,-1050 72.5,-1030 2.5,-1030"></polygon>
+      <text text-anchor="start" x="7.5" y="-1036.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">phone: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-1010 2.5,-1030 72.5,-1030 72.5,-1010 2.5,-1010"></polygon>
+      <text text-anchor="start" x="7.5" y="-1016.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">email: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-990 2.5,-1010 72.5,-1010 72.5,-990 2.5,-990"></polygon>
+      <text text-anchor="start" x="7.5" y="-996.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">city: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-970 2.5,-990 72.5,-990 72.5,-970 2.5,-970"></polygon>
+      <text text-anchor="start" x="7.1245" y="-976.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">postCode: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-950 2.5,-970 72.5,-970 72.5,-950 2.5,-950"></polygon>
+      <text text-anchor="start" x="7.5" y="-956.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">street: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-930 2.5,-950 72.5,-950 72.5,-930 2.5,-930"></polygon>
+      <text text-anchor="start" x="7.5" y="-936.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">houseNo: String</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-910 2.5,-930 72.5,-930 72.5,-910 2.5,-910"></polygon>
+      <text text-anchor="start" x="7.5" y="-916.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="2.5,-890 2.5,-910 72.5,-910 72.5,-890 2.5,-890"></polygon>
+      <text text-anchor="start" x="7.5" y="-896.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="node5" class="node" transform="matrix(1, 0, 0, 1, -227.310501, -238.351913)">
+      <title>posts</title>
+      <polygon fill="#4477c9" stroke="transparent" points="245.2792,-250 245.2792,-428 318.2792,-428 318.2792,-250 245.2792,-250"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="245.7792,-410 245.7792,-428 318.7792,-428 318.7792,-410 245.7792,-410"></polygon>
+      <polygon fill="none" stroke="#000000" points="245.7792,-410 245.7792,-428 318.7792,-428 318.7792,-410 245.7792,-410"></polygon>
+      <text text-anchor="start" x="270.7785" y="-416.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> posts </text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-390 245.7792,-410 318.7792,-410 318.7792,-390 245.7792,-390"></polygon>
+      <text text-anchor="start" x="250.7792" y="-396.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">title: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-370 245.7792,-390 318.7792,-390 318.7792,-370 245.7792,-370"></polygon>
+      <text text-anchor="start" x="250.7792" y="-376.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desc: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-350 245.7792,-370 318.7792,-370 318.7792,-350 245.7792,-350"></polygon>
+      <text text-anchor="start" x="250.4052" y="-356.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">videoLink: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-330 245.7792,-350 318.7792,-350 318.7792,-330 245.7792,-330"></polygon>
+      <text text-anchor="start" x="250.7792" y="-336.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">photos: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-310 245.7792,-330 318.7792,-330 318.7792,-310 245.7792,-310"></polygon>
+      <text text-anchor="start" x="250.7792" y="-316.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">date: Date</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-290 245.7792,-310 318.7792,-310 318.7792,-290 245.7792,-290"></polygon>
+      <text text-anchor="start" x="250.7792" y="-296.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">user: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-270 245.7792,-290 318.7792,-290 318.7792,-270 245.7792,-270"></polygon>
+      <text text-anchor="start" x="250.7792" y="-276.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-250 245.7792,-270 318.7792,-270 318.7792,-250 245.7792,-250"></polygon>
+      <text text-anchor="start" x="250.7792" y="-256.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="node6" class="node" transform="matrix(1, 0, 0, 1, -401.194489, 9.785232)">
+      <title>users</title>
+      <polygon fill="#4477c9" stroke="transparent" points="0,-520 0,-818 75,-818 75,-520 0,-520"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points=".5,-800 .5,-818 75.5,-818 75.5,-800 .5,-800"></polygon>
+      <polygon fill="none" stroke="#000000" points=".5,-800 .5,-818 75.5,-818 75.5,-800 .5,-800"></polygon>
+      <text text-anchor="start" x="26.5043" y="-806.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> users </text>
+      <polygon fill="none" stroke="#000000" points=".5,-780 .5,-800 75.5,-800 75.5,-780 .5,-780"></polygon>
+      <text text-anchor="start" x="5.5" y="-786.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">login: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-760 .5,-780 75.5,-780 75.5,-760 .5,-760"></polygon>
+      <text text-anchor="start" x="5.5" y="-766.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">pass: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-740 .5,-760 75.5,-760 75.5,-740 .5,-740"></polygon>
+      <text text-anchor="start" x="5.5" y="-746.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">name: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-720 .5,-740 75.5,-740 75.5,-720 .5,-720"></polygon>
+      <text text-anchor="start" x="5.5" y="-726.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">surname: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-700 .5,-720 75.5,-720 75.5,-700 .5,-700"></polygon>
+      <text text-anchor="start" x="5.5" y="-706.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">email: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-680 .5,-700 75.5,-700 75.5,-680 .5,-680"></polygon>
+      <text text-anchor="start" x="5.5" y="-686.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">phone: String</text>
+      <polygon fill="none" stroke="#000000" points=".5,-660 .5,-680 75.5,-680 75.5,-660 .5,-660"></polygon>
+      <text text-anchor="start" x="5.5" y="-666.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">joinDate: Date</text>
+      <polygon fill="none" stroke="#000000" points=".5,-640 .5,-660 75.5,-660 75.5,-640 .5,-640"></polygon>
+      <text text-anchor="start" x="5.5" y="-646.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">lastOnline: Date</text>
+      <polygon fill="none" stroke="#000000" points=".5,-620 .5,-640 75.5,-640 75.5,-620 .5,-620"></polygon>
+      <text text-anchor="start" x="5.5" y="-626.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">blocked: Boolean</text>
+      <polygon fill="none" stroke="#000000" points=".5,-600 .5,-620 75.5,-620 75.5,-600 .5,-600"></polygon>
+      <text text-anchor="start" x="5.1275" y="-606.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">isAdmin: Boolean</text>
+      <polygon fill="none" stroke="#000000" points=".5,-580 .5,-600 75.5,-600 75.5,-580 .5,-580"></polygon>
+      <text text-anchor="start" x="5.5" y="-586.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">workouts: Array</text>
+      <polygon fill="none" stroke="#000000" points=".5,-560 .5,-580 75.5,-580 75.5,-560 .5,-560"></polygon>
+      <text text-anchor="start" x="5.5" y="-566.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">diets: Array</text>
+      <polygon fill="none" stroke="#000000" points=".5,-540 .5,-560 75.5,-560 75.5,-540 .5,-540"></polygon>
+      <text text-anchor="start" x="5.5" y="-546.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points=".5,-520 .5,-540 75.5,-540 75.5,-520 .5,-520"></polygon>
+      <text text-anchor="start" x="5.5" y="-526.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="edge1" class="edge" transform="matrix(1, 0, 0, 1, -401.194489, 9.785232)">
+      <title>users:12-&gt;calendars:10</title>
+      <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M 75 -550 C 122.128 -550 158.827 -398.683 205.931 -397.133 C 280.791 -394.67 447.289 -364.911 527.108 -434.292 C 584.892 -484.52 556.096 -639.936 611.624 -639.936"></path>
+      <text text-anchor="middle" x="575.349" y="-535.869" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre; font-size: 14px;">users-calendars</text>
+      <text text-anchor="middle" x="78.5" y="-537.4" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre;">1</text>
+    </g>
+    <g id="edge2" class="edge" transform="matrix(1, 0, 0, 1, -22.999916, 273.112671)">
+      <title>users:12-&gt;diets:5</title>
+      <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M -303.272 -813.535 C -292.877 -813.535 -148.436 -713.806 -114.925 -691.087 C -36.308 -637.786 19.073 -811.373 40.508 -811.373"></path>
+      <text text-anchor="middle" x="-0.859" y="-842.828" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre; font-size: 14px;">users-diets</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="240.726" y="-784.2" dx="-208.856" dy="-226.784">N</text>
+    </g>
+    <g id="edge3" class="edge" transform="matrix(1, 0, 0, 1, -395.097504, -196.836334)">
+      <title>users:12-&gt;exercises:4</title>
+      <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M 70.089 -343.053 C 145.991 -343.053 166.369 -550.702 242.271 -550.702"></path>
+      <text text-anchor="middle" x="177.29" y="-469.317" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre; font-size: 14px;">users-exercises</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="240.726" y="-554.2" dx="-5.612" dy="-1.403">N</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="71.5" y="-554.2" dx="0.702" dy="202.738">1</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="237.97" y="-348.642" dx="-5.612" dy="-1.403">N</text>
+    </g>
+    <g id="edge4" class="edge" transform="matrix(1, 0, 0, 1, -400.4133, 9.097529)">
+      <title>users:12-&gt;posts:5</title>
+      <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M 75 -550 C 86.754 -550 220.842 -464.353 279.027 -464.867 C 395.257 -465.894 394.205 -738.329 416.091 -738.329"></path>
+      <text text-anchor="middle" x="348.654" y="-444.075" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre; font-size: 14px;">users-posts</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="240.726" y="-304.2" dx="169.416" dy="-247.4">N</text>
+      <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="78.5" y="-554.2" dx="-7.805" dy="-2.381">1</text>
+    </g>
+    <g id="node7" class="node" transform="matrix(1, 0, 0, 1, -399.687988, -491.124054)">
+      <title>workouts</title>
+      <polygon fill="#4477c9" stroke="transparent" points="245.2792,0 245.2792,-178 318.2792,-178 318.2792,0 245.2792,0"></polygon>
+      <polygon fill="#add8e6" stroke="transparent" points="245.7792,-160 245.7792,-178 318.7792,-178 318.7792,-160 245.7792,-160"></polygon>
+      <polygon fill="none" stroke="#000000" points="245.7792,-160 245.7792,-178 318.7792,-178 318.7792,-160 245.7792,-160"></polygon>
+      <text text-anchor="start" x="263.282" y="-166.9" font-family="Times,serif" font-weight="bold" font-style="italic" font-size="9.00" fill="#000000" style="white-space: pre;"> workouts </text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-140 245.7792,-160 318.7792,-160 318.7792,-140 245.7792,-140"></polygon>
+      <text text-anchor="start" x="250.7792" y="-146.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">title: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-120 245.7792,-140 318.7792,-140 318.7792,-120 245.7792,-120"></polygon>
+      <text text-anchor="start" x="250.7792" y="-126.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">desc: String</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-100 245.7792,-120 318.7792,-120 318.7792,-100 245.7792,-100"></polygon>
+      <text text-anchor="start" x="250.7792" y="-106.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">plan: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-80 245.7792,-100 318.7792,-100 318.7792,-80 245.7792,-80"></polygon>
+      <text text-anchor="start" x="250.4061" y="-86.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">isPublic: Boolean</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-60 245.7792,-80 318.7792,-80 318.7792,-60 245.7792,-60"></polygon>
+      <text text-anchor="start" x="250.7792" y="-66.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">users: Array</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-40 245.7792,-60 318.7792,-60 318.7792,-40 245.7792,-40"></polygon>
+      <text text-anchor="start" x="250.7792" y="-46.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">creator: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,-20 245.7792,-40 318.7792,-40 318.7792,-20 245.7792,-20"></polygon>
+      <text text-anchor="start" x="250.7792" y="-26.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">_id: ObjectId</text>
+      <polygon fill="none" stroke="#000000" points="245.7792,0 245.7792,-20 318.7792,-20 318.7792,0 245.7792,0"></polygon>
+      <text text-anchor="start" x="250.7792" y="-6.9" font-family="Times,serif" font-size="9.00" fill="#000000" style="white-space: pre;">__v: Number</text>
+    </g>
+    <g id="edge5" class="edge" transform="matrix(1, 0, 0, 1, -401.194489, 9.785232)">
+      <title>users:12-&gt;workouts:5</title>
+      <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M 75 -550 C 125.592 -550 111.692 -551.583 247.884 -551.583"></path>
+      <text text-anchor="middle" x="174.484" y="-557.894" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre; font-size: 14px;">users-workouts</text>
+      <text text-anchor="middle" x="71.5" y="-537.4" font-family="Times,serif" font-size="14.00" fill="#000000" style="white-space: pre;">1</text>
+    </g>
+    <text style="font-family: Times, serif; font-size: 14px; text-anchor: middle; white-space: pre;" x="208.917" y="-633.662" dx="-5.612" dy="-1.403">N</text>
+  </g>
+</svg>

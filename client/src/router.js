@@ -10,6 +10,10 @@ import AdminExerciseList from "./pages/admin-exercise-list.vue";
 import AdminExerciseAdd from "./pages/admin-exercise-add.vue";
 import AdminWorkoutAdd from "./pages/admin-workout-add.vue";
 import AdminWorkoutList from "./pages/admin-workout-list.vue";
+import AdminPostAdd from "./pages/admin-blog-add.vue";
+import AdminPostList from "./pages/admin-blog-list.vue";
+import WorkoutPage from "./pages/workout-page.vue";
+import ExercisePage from "./pages/admin-exercise-page.vue";
 
 const routes = [
   {
@@ -55,6 +59,24 @@ const routes = [
   {
     path: "/adminworkoutlist",
     component: AdminWorkoutList,
+  },
+  {
+    path: "/adminpostadd",
+    component: AdminPostAdd,
+  },
+  {
+    path: "/adminpostlist",
+    component: AdminPostList,
+  },
+  {
+    name: "workout",
+    path: "/workout/:id",
+    component: WorkoutPage,
+  },
+  {
+    name: "exercise",
+    path: "/exercise/:id",
+    component: ExercisePage,
   }
   
 ];
